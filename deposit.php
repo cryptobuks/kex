@@ -65,9 +65,20 @@
         <p>Warning: it may take up to 1-2 hours for the block chain to confirm your deposit.</p>
 				<p><b>WARNING: Kex holds no responsbility for lost BTC due to Mining to a addres or using a incorrect address. We CAN NOT recover lost btc and you will not recieve a refund on any lost btc.</b></p>');
 			}
+			{
+				echo('<h3>Deposit Kegcoin</h3>
+				<p>To deposit Kegcoin into your account, use the following address:</p>
+				<h4>'.$address.'</h4> 
+				<p><b><a href="getkegaddress.php">Get new address</a></b></p>
+				<br>
+				<p>The <b>SAME</b> address will appear every time you visit this page. You MUST use the address associated with your account.</p>
+                                <p>Warning: it may take up to 1-2 hours for the block chain to confirm your deposit. Depending on current transaction pool size</p>
+				<p><b>WARNING: Kex holds no responsbility for lost BTC due to Mining to a address or using a incorrect address. We CAN NOT recover lost btc and you will not recieve a refund on any lost btc.</b></p>
+			        <p> Your Adrress is subject to change without notice at any time, please do NOT mine to Your exchange address as coins sent to a old adress wil not be recoverable and will be permanantly lost.</p>');
+			}
 			else
 			{
-				echo('<h3>Deposit Bitcoin</h3><p><b>Error:</b> User not logged in.</p>');
+				echo('<h3>Deposit Kegcoin</h3><p><b>Error:</b> User not logged in.</p>');
 			}
 			?>
 		</div>
