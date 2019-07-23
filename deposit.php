@@ -8,7 +8,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="stylesheet2.css">
 <meta charset="utf-8">
-<title>Kex - The OnlineCrypto Exchange</title>
+<title>Kex - The Online Crypto Exchange</title>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
 				echo('<h3>Deposit Bitcoin</h3>
 				<p>To deposit Bitcoin into your account, use the following address:</p>
 				<h4>'.$address.'</h4> 
-				<p><b><a href="newaddress.php">Get new address</a></b></p>
+				<p><b><a href="newbtcaddress.php">Get new address</a></b></p>
 				<br>
 				<p>A new address will appear every time you refresh or visit this page. You may use any of the addresses previously associated with your account. However doe maximum annonimility, it is recommended to use a different address for each deposit you make.</p>
         <p>Warning: it may take up to 1-2 hours for the block chain to confirm your deposit.</p>
