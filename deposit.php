@@ -61,8 +61,9 @@
 				<h4>'.$address.'</h4> 
 				<p><b><a href="newaddress.php">Get new address</a></b></p>
 				<br>
-				<p>A new address will appear every time you refresh or visit this page. You may use any of the addresses previously associated with your account. However, it is recommended to use a different address for each deposit you make.</p>
-        <p>Warning: it may take up to 1-2 hours for the block chain to confirm your deposit.</p>');
+				<p>A new address will appear every time you refresh or visit this page. You may use any of the addresses previously associated with your account. However doe maximum annonimility, it is recommended to use a different address for each deposit you make.</p>
+        <p>Warning: it may take up to 1-2 hours for the block chain to confirm your deposit.</p>
+				<p><b>WARNING: Kex holds no responsbility for lost BTC due to Mining to a addres or using a incorrect address. We CAN NOT recover lost btc and you will not recieve a refund on any lost btc.</b></p>');
 			}
 			else
 			{
