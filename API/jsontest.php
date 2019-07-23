@@ -4,19 +4,19 @@
  use TurtleCoin\TurtleCoind;
  require_once 'jsonRPCClient.php';
  error_reporting(E_WARNING | E_PARSE);
-  $config = [
+  $kegconfigw = [
     'rpcHost'     => 'http://localhost',
-    'rpcPort'     => 5050,
+    'rpcPort'     => 5555,
     'rpcPassword' => 'passw0rd',
   ];
-  $configd = [
+  $kegconfigd = [
     'rpcHost' => 'http://localhost',
     'rpcPort' => 5050,
 ];
 
  $kegcoind = new TurtleCoind($configd);
  $bitcoin = new jsonRPCClient('http://username:password@127.0.0.1:8332/');
- $kegcoinw = new TurtleService($config);
+ $kegcoinw = new TurtleService($kegconfigw);
  
   echo "<pre>\n";
   print_r($bitcoin->getinfo());
