@@ -1,6 +1,6 @@
 <?php
  use TurtleCoin\TurtleService;
- require_once '/API/btcjsonRPCClient.php';
+ require_once '/API/jsonRPCClient.php';
  error_reporting(E_WARNING | E_PARSE);
  $config = [
     'rpcHost'     => 'http://localhost',
