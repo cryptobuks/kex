@@ -16,11 +16,8 @@
 
 <body>
 <script
-    src="https://www.paypal.com/sdk/js?client-id=SB_CLIENT_ID"> // replace SB_CLIENT_ID with your paypal sandbox client id
+    src="https://www.paypal.com/sdk/js?client-id=ASIPeKep4ElQ8KOjiNXouvRzYEGTPDvvmMOt8Ch-YzxExzLEkTRMYYvJ8awBEEm_z292zYhhZiVjyh62"> // replace  with your paypal sandbox client id (this is a demo one attackedh to a sandbo accout)
 </script>
-<script
-    src="https://www.paypal.com/sdk/js?client-id=SB_CLIENT_ID">
-  </script>
 
   <div id="paypal-button-container"></div>
 
