@@ -29,7 +29,7 @@ function plotGraph($COIN_NAME=KEG) {
   });
  
   $.getJSON("https://api.kex.com/v1/price/$COIN_NAME", $RESULT);
-  $FIRST_TIMESTAMP =  result[i].timestamp;
+  $FIRST_TIMESTAMP =  result.timestamp;
   $TIMESTAMP_CURRENT = time();
   for (var i = 0; i < $TIMESTAMP_CURRENT i++) {
     $.getJSON('https://api.kex.com/v1/price/$COIN_NAME?ts='$FIRST_TIMESTAMP+i, $result);
