@@ -58,20 +58,29 @@
     	</div>
     
 		<div id="main">
+		
+	
+	$UNIT = $_GET['u'];	
+	$PERIOD = $_GET['p'];
+        $COIN_NAME = $_GET['coin'];
+	
+			
       plotGraph();
-      $.getJSON("https://api.kex.com/v1/price/$COIN_NAME", $RESULT);
-      $KEGCOIN_PRICE = result.last;
-      $KEGCOIN_VOL = result.volumebtc;
-      $KEGCOIN_CHANGE = result.change;
-      $KEGCOIN_HIGH = result.high;
-      echo('
-			<p> Current Kegcoin price: <b>' .$KEGCOIN_PRICE.' USD </b>
-      <p> Current Kegcoin 24 Hr Volume: <b>' .$KEGCOIN_VOL.' USD </b>
-      <p> 24 Hr Kegcoin price change: <b>' .$KEGCOIN_CHANGE.'% </b>
-      <p> 24 Hr high: <b>' .$KEGCOIN_HIGH.' USD </b>
+      $.getJSON("https://api.kex.com/v1/price/?coin=".$COIN_NAME."&p=".$PERIOD., $RESULT);
+      $PRICE = result.last; // current prce
+      $VOL = result.volumebtc; // daily volume
+      $CHANGE = result.change; // change since yesterday
+      $HIGH = result.high; // highest prce today
+      $LOW = result.low; //  loest prce today
+			echo('
+			<p> Current '.$COIN_NAME.' price: <b>' .$PRICE. .$UNIT.' </b>
+      <p> Current '.$COIN_NAME.' 24 Hr Volume: <b>' .$VOL. .$UNIT.' </b>
+      <p> 24 Hr '.$COIN_NAME.' price change: <b>' .$CHANGE.'% </b>
+      <p> 24 Hr ''.$COIN_NAME. high': <b>' .$HIGH. .$UNIT.' </b>
+	      <p> 24 Hr  '.$COIN_NAME.' low: <b>' .$LOW. .$UNIT.' </b>
       '); 
-      buyButton(kegusd); // TODO
-      sellButton(kegusd); // TODO
+      buyButton(.$COIN_NAME..$UNIT); // TODO
+      sellButton(.$COIN_NAME..$UNIT); // TODO
 	
 
 		</div>
