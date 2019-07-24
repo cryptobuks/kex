@@ -2,7 +2,7 @@
 	session_start();
         $DB_HOST = 'localhost';
         $DB_USER = 'root';
-        $DB_PASSWORD = '';
+        $DB_PASSWORD = 'test';
 	//replace with db info
 	mysql_connect("$DB_HOST", "$DB_USER", "$DB_PASSWORD");
 	mysql_select_db("kex");
