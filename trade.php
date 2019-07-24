@@ -65,8 +65,8 @@
         $COIN_NAME = $_GET['coin'];
 	
 			
-      plotGraph();
-      $.getJSON("https://api.kex.com/v1/price/?coin=".$COIN_NAME."&p=".$PERIOD., $RESULT);
+      plotGraph($COIN_NAME,$PERIOD,$UNIT);
+      $.getJSON("https://api.kex.com/v1/price/?coin=".$COIN_NAME."&p=".$PERIOD.'&u='.$UNIT., $RESULT);
       $PRICE = result.last; // current prce
       $VOL = result.volumebtc; // daily volume
       $CHANGE = result.change; // change since yesterday
