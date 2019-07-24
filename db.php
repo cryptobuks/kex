@@ -24,13 +24,49 @@ function user_login($username, $password)
 				header("Location: trade.php");
 			}
 }
-function btc_balance($username)
+function getBtcBalance($username)
 	{
 	//prevent mysql injection
 	$username = mysql_real_escape_string($username);
 	//query
-	 $sql = mysql_query("SELECT balance FROM btcbalance where username = '".$username.;
-	
+	 $sql = mysql_query("SELECT bitcoin FROM balances where username = '".$username.);
+	 $balance = $sql;
+	return $balance;		    
 }
-	
+function getKegcoinBalance($username)
+	{
+	//prevent mysql injection
+	$username = mysql_real_escape_string($username);
+	//query
+	 $sql = mysql_query("SELECT kegcoin FROM balances where username = '".$username.);
+	$balance = $sql;
+	return $balance;		    
+}
+function getKegAddress($username) {	
+	$username = mysql_real_escape_string($username);
+	//query
+	 $sql = mysql_query("SELECT kegcoin FROM addresses where username = '".$username.);
+	$address = $sql;
+	return $address;
+}
+function setKegAddress($username, $address) {
+	$username = mysql_real_escape_string($username);
+	//query
+	$sql = mysql_query("SELECT kegcoin FROM addresses where username = '".$username. LIMIT 1");
+	$rows = mysql_num_rows($sql);
+	if ($rows = 0) 
+	{
+		$sql = "INSERT INTO addresses (username, kegcoin)
+       	        VALUES ($username, $address)";
+		}
+		else
+		{
+		$sql = "UPDATE addresses SET kegcoin=".$address." WHERE username=".$username.;
+		if ($conn->query($sql) === TRUE) {
+    			echo "Record updated successfully";
+		} else {
+    		echo "Error updating record: " . $conn->error;
+		}
+	}
+		
 ?>
