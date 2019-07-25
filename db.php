@@ -76,8 +76,9 @@ function setKegAddress($username, $address) {
 	}
 }
 function getPrice($coin, $pair) {		
-        $market = mysql_real_escape_string($ticker, $pair);
-	$sql = mysql_query( "SELECT price FROM prices WHERE coin = " .$coin. " AND pair = " .$pair.);
+        $ticker = mysql_real_escape_string($ticker);
+        $pair = mysql_real_escape_string($pair);
+	$sql = mysql_query( "SELECT ".$coin.$pair. " FROM prices);
         return $sql; 
 } 	
 ?>
