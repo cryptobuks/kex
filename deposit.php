@@ -16,9 +16,7 @@
 
 <body>
 
-  <script>
-    paypal.Buttons().render('#paypal-button-container');
-  </script>
+  
   
 <div id="headBar"><p class="logoFont">Kex</p></div>
 
