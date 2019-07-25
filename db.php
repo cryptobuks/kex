@@ -74,8 +74,10 @@ function setKegAddress($username, $address) {
 		} else {
     		echo "Error updating record: " . $conn->error;
 	}
-}		
-function getTrades($market) {
-        $market = mysql_real_escape_string($market);
-}		
+}
+function getPrice($coin, $pair) {		
+        $market = mysql_real_escape_string($ticker, $pair);
+	$sql = mysql_query( "SELECT price FROM prices WHERE coin = " .$coin. " AND pair = " .$pair.);
+        return $sql; 
+} 	
 ?>
