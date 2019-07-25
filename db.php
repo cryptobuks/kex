@@ -69,16 +69,21 @@ function setKegAddress($username, $address) {
        	        VALUES ($username, $address)";
 	}else {
 		$sql = "UPDATE addresses SET kegcoin=".$address." WHERE username=".$username.;
-		if (mysql_query($sql) === TRUE) {
-    			echo "Record updated successfully";
-		} else {
-    		echo "Error updating record: " . $conn->error;
+		
+		
 	}
 }
 function getPrice($coin, $pair) {		
         $ticker = mysql_real_escape_string($ticker);
         $pair = mysql_real_escape_string($pair);
-	$sql = mysql_query( "SELECT ".$coin.$pair. " FROM prices);
+	$sql = mysql_query( "SELECT ".$coin.$pair. " FROM prices");
         return $sql; 
-} 	
+} 
+function setPrice($coin, $pair, $ price) {
+        $ticker = mysql_real_escape_string($ticker);
+        $pair = mysql_real_escape_string($pair);
+        $sql = "UPDATE prices SET ".$coin.$pair." = ".$price.);
+	
+}
+
 ?>
