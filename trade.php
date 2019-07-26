@@ -65,12 +65,12 @@
 	
 			
       plotGraph($COIN_NAME,$PERIOD,$UNIT);
-      $.getJSON("https://api.kex.com/v1/price/?coin=".$COIN_NAME."&p=".$PERIOD.'&u='.$UNIT., $RESULT);
+      $.getJSON("https://api.kex.com/v1/coin/index.php?c=".$COIN_NAME."&p=".$PERIOD.'&u='.$UNIT., $RESULT);
       $PRICE = result.last; // current prce
       $VOL = result.volumebtc; // daily volume
       $CHANGE = result.change; // change since yesterday
       $HIGH = result.high; // highest prce today
-      $LOW = result.low; //  loest prce today
+      $LOW = result.low; //  lowest prce today
 	echo('
 	<p> Current '.$COIN_NAME.' price: <b>' .$PRICE. .$UNIT.' </b>
       <p> Current '.$COIN_NAME.' 24 Hr Volume: <b>' .$VOL. .$UNIT.' </b>
