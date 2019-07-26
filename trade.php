@@ -1,8 +1,6 @@
 <?php
 	include("login.php");
-  include("buy.php"); // TODO
-  include("sell.php"); // TODO
-  <script src="/js/graph.js"></script>
+        <script src="/js/graph.js"></script>
 	if (isset($_SESSION['username'])){
 	include("coinhandler.php");}
 ?>
@@ -19,7 +17,8 @@
 
 <div id="headBar"><p class="logoFont">Kex</p></div>
 
-	<div id="userInfo"><?php 
+	<div id="userInfo">
+		<?php 
 			if (isset($_SESSION['username']))
 			{
 				echo('<p>Welcome, <b>'.$_SESSION['username'].'</b>! Your current balance is: '.$btcbalance.' BTC + ' .$kegbalance.' KEG</p>');
@@ -53,7 +52,7 @@
                 <input type="submit" value="Go" /></form>
 				</p><a href="registrationform.php">Register</a></p>');
 		}
-			?>
+			
 			
     	</div>
     
@@ -72,15 +71,58 @@
       $CHANGE = result.change; // change since yesterday
       $HIGH = result.high; // highest prce today
       $LOW = result.low; //  loest prce today
-			echo('
-			<p> Current '.$COIN_NAME.' price: <b>' .$PRICE. .$UNIT.' </b>
+	echo('
+	<p> Current '.$COIN_NAME.' price: <b>' .$PRICE. .$UNIT.' </b>
       <p> Current '.$COIN_NAME.' 24 Hr Volume: <b>' .$VOL. .$UNIT.' </b>
       <p> 24 Hr '.$COIN_NAME.' price change: <b>' .$CHANGE.'% </b>
       <p> 24 Hr ''.$COIN_NAME. high': <b>' .$HIGH. .$UNIT.' </b>
 	      <p> 24 Hr  '.$COIN_NAME.' low: <b>' .$LOW. .$UNIT.' </b>
-      '); 
-      buyButton(.$COIN_NAME..$UNIT); // TODO
-      sellButton(.$COIN_NAME..$UNIT); // TODO
+      
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<form action = "/exchange.php">
+
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label" for="Amount (BTC)">Amount (BTC)</label> 
+    <div class="col-8">
+      <div class="input-group">
+        <input id="Amount (BTC)" name="Amount (BTC)" placeholder="0.01" type="text" aria-describedby="Amount (BTC)HelpBlock" required="required" class="form-control"> 
+        <div class="input-group-append">
+          <div class="input-group-text">BTC</div>
+        </div>
+      </div> 
+      <span id="Amount (BTC)HelpBlock" class="form-text text-muted">Enter the amount you wish to purchase in BTC</span>
+    </div>
+  </div> 
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+
+<form action = "/exchange.php">
+  <div class="form-group row">
+    <label class="col-4 col-form-label" for="Amount (BTC)">Amount (BTC)</label> 
+    <div class="col-8">
+      <div class="input-group">
+        <input id="Amount (".$TICKER.")" name="Amount (".$TICKER. ")" placeholder="0.01" type="text" aria-describedby="Amount ()HelpBlock" required="required" class="form-control"> 
+        <div class="input-group-append">
+          <div class="input-group-text">$TICKER</div>
+        </div>
+      </div> 
+      <span id="Amount ()HelpBlock" class="form-text text-muted">Enter the amount you wish to sell in ".$TICKER.</span>
+    </div>
+  </div> 
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-primary">Sell</button>
+    </div>
+  </div>
+</form>
+ ");
 	
 
 		</div>
